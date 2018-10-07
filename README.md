@@ -37,7 +37,7 @@ passport.use(
   },
 
   (accessToken, refreshToken, profile, done) => {
-    User.findOrCreate({ bitbucketId: profile.username }, (err, user) => {
+    User.findOrCreate({ bitbucketId: profile.id }, (err, user) => {
       done(err, user)
     })
   }

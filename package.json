@@ -41,7 +41,7 @@
   },
   "scripts": {
     "lint": "script/lint",
-    "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
+    "test": "script/test"
   },
   "engines": {
     "node": ">= 0.4.0"

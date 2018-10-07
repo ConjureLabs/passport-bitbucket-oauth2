@@ -1,0 +1,12 @@
+#! /bin/bash
+
+BASE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+. $BASE/functions
+
+set -e;
+
+eslint $PRJ_DIR --quiet;
+progress "Lint passed";
+
+jscs $PRJ_DIR;
+progress "Coding style passed";

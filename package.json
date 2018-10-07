@@ -34,9 +34,13 @@
     "passport-oauth2": "1.4.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.6.1",
+    "jscs": "^3.0.7",
     "vows": "0.6.x"
   },
   "scripts": {
+    "lint": "script/lint",
     "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
   },
   "engines": {

@@ -1,5 +1,7 @@
 # Passport-Bitbucket
 
+[![CircleCI](https://circleci.com/gh/ConjureLabs/passport-bitbucket-oauth2/tree/master.svg?style=svg)](https://circleci.com/gh/ConjureLabs/passport-bitbucket-oauth2/tree/master)
+
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
 with [Bitbucket](https://bitbucket.org/) using the OAuth 2.0 API.
 

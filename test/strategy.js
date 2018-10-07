@@ -19,7 +19,7 @@ test.cb('should load user profile', t => {
   // hijack oauth get method, force test response
   t.context.strategy._oauth2.get = (url, token, callback) => {
     const body = `{
-      "uuid": "id123",
+      "uuid": "{c788b2da-b7a2-404c-9e26-d3f077557007}",
       "username": "timomars",
       "display_name": "Tim Marshall",
       "website": "https://conjure.sh",
@@ -37,7 +37,7 @@ test.cb('should load user profile', t => {
 
   t.context.strategy.userProfile('token', (err, profile) => {
     t.falsy(err)
-    t.is(profile.id, 'id123')
+    t.is(profile.id, '{c788b2da-b7a2-404c-9e26-d3f077557007}')
     t.is(profile.provider, 'bitbucket')
     t.is(profile.username, 'timomars')
     t.is(profile.displayName, 'Tim Marshall')

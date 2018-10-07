@@ -68,6 +68,7 @@ For a complete, working example, refer to the [login example](https://github.com
 ## Tests
 
 ```sh
+npm run lint
 npm test
 ```
 

@@ -27,6 +27,8 @@ accepts these credentials and calls `done` providing a user, as well as
 `options` specifying a consumer key, consumer secret, and callback URL.
 
 ```js
+const BitbucketStrategy = require('passport-bitbucket-oauth2').Strategy
+
 passport.use(
   new BitbucketStrategy({
     clientID: BITBUCKET_CLIENT_ID,
@@ -62,10 +64,6 @@ app.get(
   }
 )
 ```
-
-## Examples
-
-For a complete, working example, refer to the [login example](https://github.com/bithound/passport-bitbucket-oauth2/tree/master/examples/login).
 
 ## Tests
 

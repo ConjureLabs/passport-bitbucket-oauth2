@@ -51,7 +51,7 @@ test.cb('should load user profile', t => {
 test.cb('should deal with errors properly', t => {
   // hijack oauth get method, force test response
   t.context.strategy._oauth2.get = (url, token, callback) => {
-    callback(new Error('something went wrong'));
+    callback(new Error('something went wrong'))
   }
 
   t.context.strategy.userProfile('token', (err, profile) => {

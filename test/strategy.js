@@ -37,6 +37,7 @@ test.cb('should load user profile', t => {
 
   t.context.strategy.userProfile('token', (err, profile) => {
     t.falsy(err)
+    t.is(profile.id, 'id123')
     t.is(profile.provider, 'bitbucket')
     t.is(profile.username, 'timomars')
     t.is(profile.displayName, 'Tim Marshall')

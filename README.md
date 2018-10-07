@@ -11,7 +11,9 @@ unobtrusively integrated into any application or framework that supports
 
 ## Install
 
-    $ npm install passport-bitbucket-oauth2
+```sh
+npm install --save passport-bitbucket-oauth2
+```
 
 ## Usage
 
@@ -22,17 +24,21 @@ account and OAuth tokens.  The strategy requires a `verify` callback, which
 accepts these credentials and calls `done` providing a user, as well as
 `options` specifying a consumer key, consumer secret, and callback URL.
 
-    passport.use(new BitbucketStrategy({
-        clientID: BITBUCKET_CLIENT_ID,
-        clientSecret: BITBUCKET_CLIENT_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/bitbucket/callback"
-      },
-      function(accessToken, refreshToken, profile, done) {
-        User.findOrCreate({ bitbucketId: profile.username }, function (err, user) {
-          return done(err, user);
-        });
-      }
-    ));
+```js
+passport.use(
+  new BitbucketStrategy({
+    clientID: BITBUCKET_CLIENT_ID,
+    clientSecret: BITBUCKET_CLIENT_SECRET,
+    callbackURL: 'http://127.0.0.1:3000/auth/bitbucket/callback'
+  },
+
+  (accessToken, refreshToken, profile, done) => {
+    User.findOrCreate({ bitbucketId: profile.username }, (err, user) => {
+      done(err, user)
+    })
+  }
+))
+```
 
 #### Authenticate Requests
 
@@ -42,15 +48,18 @@ authenticate requests.
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
-    app.get('/auth/bitbucket',
-      passport.authenticate('bitbucket'));
+```js
+app.get('/auth/bitbucket', passport.authenticate('bitbucket'))
 
-    app.get('/auth/bitbucket/callback', 
-      passport.authenticate('bitbucket', { failureRedirect: '/login' }),
-      function(req, res) {
-        // Successful authentication, redirect home.
-        res.redirect('/');
-      });
+app.get(
+  '/auth/bitbucket/callback',
+  passport.authenticate('bitbucket', { failureRedirect: '/login' }),
+  (req, res) => {
+    // Successful authentication, redirect home.
+    res.redirect('/')
+  }
+)
+```
 
 ## Examples
 
@@ -58,8 +67,9 @@ For a complete, working example, refer to the [login example](https://github.com
 
 ## Tests
 
-    $ npm install --dev
-    $ make test
+```sh
+npm test
+```
 
 ## Credits
 

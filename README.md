@@ -14,7 +14,7 @@ unobtrusively integrated into any application or framework that supports
 ## Install
 
 ```sh
-npm install --save passport-bitbucket-oauth2
+npm i --save passport-bitbucket-oauth2@git+https://github.com/ConjureLabs/passport-bitbucket-oauth2.git
 ```
 
 ## Usage
